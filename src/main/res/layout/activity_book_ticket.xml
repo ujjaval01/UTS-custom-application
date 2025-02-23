@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    tools:context=".BookTicketActivity">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:elevation="4dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/uts4">
+
+        </ImageView>
+
+
+    </RelativeLayout>
+
+    <!-- Booking History Section -->
+    <TextView
+        android:id="@+id/bookingHistoryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BOOKING HISTORY"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:gravity="center"
+        android:background="@android:color/holo_orange_light"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Ticket Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ticketCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/bookingHistoryTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/journeyTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="JOURNEY (M-TICKET)"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:paddingBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/sourceStation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="🟤  PHAGWARA JN."
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/destinationStation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="🟣  SAHARANPUR JN."
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/viaRoute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Via: UMB"
+                android:textSize="14sp"
+                android:textColor="@android:color/holo_red_dark"
+                android:paddingTop="4dp"/>
+
+            <TextView
+                android:id="@+id/adultChildInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADULT: 1   CHILD: 0"
+                android:textSize="14sp"
+                android:paddingTop="4dp"/>
+
+            <TextView
+                android:id="@+id/classType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SECOND (II)  MAIL/EXP (M/E)"
+                android:textSize="14sp"
+                android:paddingTop="4dp"/>
+
+            <TextView
+                android:id="@+id/bookingDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BOOKING DATE: Feb 24, 2025  06:43:58"
+                android:textSize="14sp"
+                android:textColor="@android:color/holo_red_dark"
+                android:paddingTop="4dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom Buttons -->
+    <LinearLayout
+        android:id="@+id/bottomButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/ticketCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/rebookTicket"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Re-BOOK TICKET"
+            android:textAllCaps="false"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/nextTrains"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="NEXT TRAINS"
+            android:textAllCaps="false"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
